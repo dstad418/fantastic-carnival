@@ -1,0 +1,33 @@
+:root {
+  --blue: #1773ff;
+  --dark-blue: #1818af;
+  --dark-green: #046a04;
+  --white: #ffffff;
+  --light-grey: #dbcfcf;
+  --black: #000000;
+}
+
+body {
+  position: relative;
+}
+
+
+.about-me-section {
+  background-color: var(--light-grey);
+  font-size: 1.15rem;
+}
+
+/* MOBILE VIEW */
+@media (max-width: 480px) {
+
+}
+
+/* TABLET VIEW */
+@media (min-width: 480.1px) and (max-width: 768px) {
+
+}
+
+/* DESKTOP VIEW */
+@media (min-width: 768.1px) {
+
+}
