@@ -11,16 +11,17 @@
     />
     <link rel="stylesheet" href="styles.css" />
   </head>
-  <body>
+  <body class="back-drop">
+    <div class="front-drop">
     <div>
-      <nav style="background-color: rgba(243, 238, 238, 0.851)">
+      <nav class="navbar" style="background-color: rgba(243, 238, 238, 0.851)">
         <ul>
           <li class="nav-list">
             <a class="nav-link" href="#about" style="color: black">About</a>
           </li>
           <li class="nav-list">
-            <a class="nav-link" href="#experiences" style="color: black"
-              >Experiences</a
+            <a class="nav-link" href="#experience" style="color: black"
+              >Experience</a
             >
           </li>
           <li class="nav-list">
@@ -35,7 +36,7 @@
       </nav>
     </div>
     <div class="row py-5 mt-5">
-      <div class="col-12 col-md-5">
+      <div id="about" class="col-12 col-md-5">
         <img
           class="img-fluid"
           src="images/Screenshot 2023-03-11 at 1.37.45 PM.png"
@@ -43,9 +44,10 @@
         />
       </div>
       <div class="about-me col-12 col-md-7 p-5">
-        <h1 id="about">Hello World! I'm Dylan.</h1>
+        <h1>Hello World! I'm Dylan.</h1>
         <h3>(he/him/his)</h3>
-        <p class="mt-5">
+        <div class="description-border">
+        <p class="description">
           I'm a software engineer living in Portland, Oregon. I love
           problem-solving and the challenges that come from it, discovering how
           to better improve my skills, learning new technologies, and being
@@ -55,12 +57,13 @@
           to your project please reach out. I'd love to hear from you and learn
           what you're working on!
         </p>
+        </div>
       </div>
     </div>
-
-    <div id="work-section" class="row my-5">
-      <h1>Experiences</h1>
-
+    <!-- Experience -->
+    <div id="experience" class="row my-5">
+      <h1>Experience</h1>
+      <div class="experience-inner">
       <div>
         <h2>Education</h2>
         <ul class="list-group list-group-flush">
@@ -74,12 +77,13 @@
           <li class="list-group-item">
             <h3>Portland State University</h3>
             <p>
-              Bachelor of Science, Computer Science -
+              Bachelor of Science, Biochemistry -
               <mark>Magna cum lauda</mark>
             </p>
           </li>
         </ul>
         <h2>Skills</h2>
+        <p class="skill-descriptions">
         In my profession, i've lead teams, managed people and have reported to
         state authorities. In my education and personal projects, I've worked
         recreating low-level backend systems in x86 CISC architecture to
@@ -89,12 +93,14 @@
         determining software architecture. Brainstorming how the pieces fit
         together to promote efficiency and maintainability through certain
         styles is something I find interesting.
+        </p>
       </div>
     </div>
+    </div>
+    <!-- Projects Carousel -->
     <div>
-      <h1>Projects</h1>
+      <h1 id="projects">Projects</h1>
       <div
-        id="carouselExampleControls"
         class="carousel slide"
         data-ride="carousel"
       >
@@ -143,7 +149,117 @@
     </div>
     <div>
       <h1>Contact</h1>
+            <!-- Code specifically for the jumbotron and styles associated with it -->
+            <div id="contact" style="padding-top: 5%; padding-bottom: 5%;">
+              <!-- Code for the floating form -->
+              <form class="jumbotron bg-light text-dark" style="padding: 10px; margin: auto;">
+                <!-- Header -->
+
+                <!-- Username block -->
+                <div class="row mb-3" style="margin-top: 20px;">
+                  <label for="inputUsername3" class="col-sm-3 col-form-label"
+                    >Username:</label
+                  >
+                  <div class="col-sm-9">
+                    <input type="text" class="form-control" placeholder="Your name." id="inputUsername3" />
+                  </div>
+                </div>
+                <!-- E-mail block -->
+                <div class="row mb-3">
+                  <label for="inputEmail3" class="col-sm-3 col-form-label"
+                    >Email:</label
+                  >
+                  <div class="col-sm-9">
+                    <input type="email" class="form-control" placeholder="Stay in touch!" id="inputEmail3" />
+                  </div>
+                </div>
+                <!-- Password block -->
+                <div class="row mb-3">
+                  <label for="inputPassword3" class="col-sm-3 col-form-label"
+                    >Password:</label
+                  >
+                  <div class="col-sm-9">
+                    <input type="password" class="form-control" placeholder="Enter password here." id="inputPassword3" />
+                  </div>
+                </div>
+                <!-- Fieldset for the radio button options -->
+                <fieldset class="row mb-3">
+                  <div>
+                    <legend class="col-form-label col-sm-9 col-md-9 pt-0">
+                      Would you like to sign up for the newsletter?
+                    </legend>
+                  </div>
+                  <div class="col-sm-10">
+                    <div class="form-check">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="gridRadios"
+                        id="gridRadios1"
+                        value="option1"
+                        checked
+                      />
+                      <label class="form-check-label" for="gridRadios1">
+                        Okay, sure.
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="gridRadios"
+                        id="gridRadios2"
+                        value="option2"
+                      />
+                      <label class="form-check-label" for="gridRadios2">
+                        Yes, please!
+                      </label>
+                    </div>
+                    <div class="col-sm-10">
+                      <div class="form-check">
+                        <input
+                          class="form-check-input"
+                          type="radio"
+                          name="gridRadios"
+                          id="gridRadios1"
+                          value="option1"
+                          checked
+                        />
+                        <label class="form-check-label" for="gridRadios1">
+                          Absolutely!!!
+                        </label>
+                      </div>
+                  </div>
+                </fieldset>
+                <!--  Date block -->
+                <div class="row mb-3">
+                  <label for="inputDate3" class="col-sm-3 col-form-label"
+                    >Date:</label
+                  >
+                  <div class="col-sm-9">
+                    <input type="date" class="form-control" id="inputDate3" />
+                  </div>
+                  <!-- Div block for the selection buttons -->
+                <div class="text-center" style="margin: 20px;">
+                  <button type="submit" class="btn btn-primary" style="width: 100px">Submit</button>
+                  <button type="submit" class="btn btn-secondary" style="width: 100px;">Reset</button>
+                </div>
+              </form>
+            </div>
+            <!-- Footer -->
+            <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+              <div class="col-md-4 d-flex align-items-center">
+              </div>
+              <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+                <li class="ms-3">
+                  <a class="text-muted" href="https://github.com/dstad418">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16" alt="GitHub logo">
+                      <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path>
+                    </svg>
+                  </a>
+                </li>
+              </ul>
+            </footer>
     </div>
-    <div></div>
   </body>
 </html>

@@ -3,16 +3,45 @@
   --dark-blue: #1818af;
   --dark-green: #046a04;
   --white: #ffffff;
-  --light-grey: #dbcfcf;
+  --light-grey: #e7e0e0;
   --black: #000000;
 }
 
-body {
-  position: relative;
+.back-drop {
+  background-color: var(--dark-green);
 }
 
+.front-drop {
+  margin: 20px;
+  background-color: var(--white);
+}
 
-.about-me-section {
+.about {
+  margin: 20px;
+}
+
+.experience-inner {
+  margin: 20px;
+}
+
+.list-group {
+  margin-right: 10%;
+}
+
+.skill-descriptions {
+  margin: 10px;
+  margin-right: 20px;
+}
+
+.navbar {
+  position: sticky;
+}
+
+.decription-border {
+  background-color: #e7e0e0;
+}
+
+.description {
   background-color: var(--light-grey);
   font-size: 1.15rem;
 }
