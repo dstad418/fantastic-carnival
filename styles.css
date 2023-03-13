@@ -16,8 +16,21 @@
   background-color: var(--white);
 }
 
+.navbar {
+  position: sticky;
+}
+
 .about {
   margin: 20px;
+}
+
+.decription-border {
+  background-color: #e7e0e0;
+}
+
+.description {
+  background-color: var(--light-grey);
+  font-size: 1.15rem;
 }
 
 .experience-inner {
@@ -33,30 +46,90 @@
   margin-right: 20px;
 }
 
-.navbar {
-  position: sticky;
+.carousel {
+  position: relative;
+  height: 600px;
+  width: 80%;
+  margin: 0 auto;
 }
 
-.decription-border {
-  background-color: #e7e0e0;
+.carousel__image {
+  width: 100%;
+  height: 100%;
 }
 
-.description {
-  background-color: var(--light-grey);
-  font-size: 1.15rem;
+.carousel__track-container {
+  background: #1773ff;
+  padding: 10px;
+  height: 100%;
+  position: relative;
 }
+
+.carousel__track {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.carousel__slide {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+.carousel__button {
+  position: absolute;
+  top: 50%;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+}
+
+.carousel__button--left {
+  left: -40px;
+}
+
+.carousel__button--right {
+  right: -40px;
+}
+
+.carousel__button img {
+  width: 40px;
+}
+
+.carousel__nav {
+  background: black;
+  display: flex;
+  justify-content: center;
+  padding: 10px 0;
+}
+
+.carousel__indicator {
+  border: 0;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  background: rgb(181, 178, 178);
+  margin: 0 10px;
+}
+
+.carousel__indicator.current-slide {
+  background: var(--blue);
+}
+
+
+
+/*        DIFFERENT VIEWS        */
 
 /* MOBILE VIEW */
 @media (max-width: 480px) {
-
 }
 
 /* TABLET VIEW */
 @media (min-width: 480.1px) and (max-width: 768px) {
-
 }
 
 /* DESKTOP VIEW */
 @media (min-width: 768.1px) {
-
 }

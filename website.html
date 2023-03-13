@@ -9,6 +9,7 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
     />
+    <link rel="js-style" href="settings.js"/>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body class="back-drop">
@@ -98,7 +99,45 @@
     </div>
     </div>
     <!-- Projects Carousel -->
-    <div>
+    <div class="carousel">
+      <button class="carousel__button carousel__button--left">
+        <img src="images/169-1691085_left-right-arrow-button-png-left-arrow-icon.png" alt="">
+      </button>
+      <div class="carousel__track-container">
+        <ul class="carousel__track">
+          <li class="carousel__slide">
+            <img class="carousel__image" src="images/computer_server_based.png" alt="">
+          </li>
+          <li class="carousel__slide">
+            <img class="carousel__image" src="images/space_ijuu_mars.png" alt="">
+          </li>
+          <li class="carousel__slide">
+            <img class="carousel__image" src="images/sweets_chocolate_cake_sachertorte.png" alt="">
+          </li>
+
+        </ul>
+      </div>
+      <button class="carousel__button carousel__button--right">
+        <img src="images/169-1691085_right-right-arrow-button-png.jpeg" alt="">
+      </button>
+
+      <div class="carousel__nav">
+        <button class="carousel__indicator current-slide">
+
+        </button>
+
+        <button class="carousel__indicator">
+
+        </button>
+
+        <button class="carousel__indicator">
+
+        </button>
+
+      </div>
+
+
+<!--
       <h1 id="projects">Projects</h1>
       <div
         class="carousel slide"
@@ -147,6 +186,8 @@
         </a>
       </div>
     </div>
+  -->
+
     <div>
       <h1>Contact</h1>
             <!-- Code specifically for the jumbotron and styles associated with it -->
@@ -261,5 +302,6 @@
               </ul>
             </footer>
     </div>
+    <script src="settings.js"></script>
   </body>
 </html>
