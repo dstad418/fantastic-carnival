@@ -60,15 +60,18 @@
 
 .carousel__track-container {
   background: #1773ff;
-  padding: 10px;
   height: 100%;
   position: relative;
+  overflow: hidden;
 }
 
 .carousel__track {
   padding: 0;
   margin: 0;
   list-style: none;
+  position: relative;
+  height: 100%;
+  transform: transform 250ms ease-in;
 }
 
 .carousel__slide {
@@ -112,13 +115,16 @@
   height: 20px;
   background: rgb(181, 178, 178);
   margin: 0 10px;
+  cursor: pointer;
 }
 
 .carousel__indicator.current-slide {
   background: var(--blue);
 }
 
-
+.is-hidden {
+  display: none;
+}
 
 /*        DIFFERENT VIEWS        */
 

@@ -1,4 +1,3 @@
-
 //  Variable Declaration
 const track = document.querySelector('.carousel__track');
 const slides = Array.from(track.children);
@@ -9,13 +8,76 @@ const dots = Array.from(dotsNav.children);
 const slideSize = slides[0].getBoundingClientRect().width;
 
 // Arranging slides in an array
-//slides[0].style.left = slideWidth * 0 + 'px';
-//slides[1].style.left = slideWidth + 'px';
-//slides[2].style.left = slideWidth * 2 + 'px';
-slides.forEach((slide, index) => {
-    slide.style.left = slideWidth * index + 'px';
+const setSlidePosition = (slide, index) => {
+  slide.style.left = slideWidth * index + 'px';
+};
+slides.forEach(setSlidePosition);
+
+// Reuse close
+const moveToSlide = (track, currentSlide, targetSlide) => {
+  track.style.transform = 'translateX(' + targetSlide.style.left + ')';
+  currentSlide.classList.remove('.current-slide');
+  targetSlide.classList.add('current-slide');
+};
+
+const updateDots = (currentDot, targetDot) => {
+  currentDot.classList.remove('current-slide');
+  targetDot.classList.add('current-slide');
+};
+
+const hideShowArrows = (slides, prevButton, nextButton, targetIndex) => {
+  if (targetIndex === 0) {
+    prevButton.classList.add('is-hidden');
+    nextButton.classList.remove('is-hidden');
+  } else if (targetIndex === slides.length - 1) {
+    nextButton.classList.add('is-hidden');
+    prevButton.classList.remove('is-hidden');
+  } else {
+    prevButton.classList.remove('is-hidden');
+    nextButton.classList.remove('is-hidden');
+  }
+};
+
+// Adding functionality for previous slide button
+prevButton.addEventListener('click', (e) => {
+  const currentSlide = track.document.querySelector('.current-slide');
+  const prevSlide = currentSlide.previousElementSibling;
+  const currentDot = dotsNav.querySelector('.current-slide');
+  const prevDot = previousDot.nextElementSibling;
+  const prevIndex = slides.findIndex((slide) => slide === prevSlide);
+  moveToSlide(track, currentSlide, prevSlide);
+  updateDots(currentDot, prevDot);
+  hideShowArrows(slides, prevButton, nextButton, prevIndex);
 });
 
+// Navigating to the next slide ->
+nextButton.addEventListener('click', (e) => {
+  // Find current slide
+  const currentSlide = track.document.querySelector('.current-slide');
+  const nextSlide = currentSlide.nextElementSibling;
+  const currentDot = dotsNav.querySelector('.current-slide');
+  const nextDot = currentDot.nextElementSibling;
+  const nextIndex = slides.findIndex((slide) => slide === nextSlide);
+  // Move to the next slide
+  moveToSlide(track, currentSlide, nextSlide);
+  updateDots(currentDot, nextDot);
+  hideShowArrows(slides, prevButton, nextButton, nextIndex);
+});
 
+// Moving the event listener dots!
+dotsNav.addEventListener('click', (e) => {
+  const targetDot = e.target.closest('button');
 
-/*      Slide navigator      */
+  if (!targetDot) {
+    return;
+  }
+  const currentSlide = track.querySelector('.current-slide');
+  const currentDot = dotsNav.querySelector('.current-slide');
+  // Loop through array, find first true expr
+  const targetIndex = dots.findIndex((dot) => dot === targetDot);
+  const targetSlide = slides[targetIndex];
+  // Allows us to click on the nav buttons!
+  moveToSlide(track, currentSlide, targetSlide);
+  updateDots(currentDot, targetDot);
+  hideShowArrows(slides, prevButton, nextButton, targetIndex);
+});
