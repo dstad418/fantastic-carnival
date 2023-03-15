@@ -9,6 +9,8 @@ const slideWidth = slides[0].getBoundingClientRect().width;
 
 // Arranging slides in an array
 //      Specifically putting enough distance between them, so the images will not overlap!
+//      DO NOT TOUCH ANY VARIABLE INSIDE OF THE SLIDE.STYLE.LEFT ASSIGNMENT!!!!
+//      THE CAROUSEL IMAGES WILL OVERLAP AT LARGER MEDIA VIEWS
 const setSlidePosition = (slide, index) => {
   slide.style.left = slideWidth * 9 * index + 'px';
 };
@@ -29,12 +31,15 @@ const updateDots = (currentDot, targetDot) => {
 
 // Hides/shows arrows if at the end of the array/beginning of the array.
 const hideShowArrows = (slides, prevButton, nextButton, targetIndex) => {
+  // If at the first slide, left is hidden
   if (targetIndex === 0) {
     prevButton.classList.add('is-hidden');
     nextButton.classList.remove('is-hidden');
+    // If at end, right is hidden
   } else if (targetIndex === slides.length - 1) {
     nextButton.classList.add('is-hidden');
     prevButton.classList.remove('is-hidden');
+    // If neither, is-hidden is removed
   } else {
     prevButton.classList.remove('is-hidden');
     nextButton.classList.remove('is-hidden');
