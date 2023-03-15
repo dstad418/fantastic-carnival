@@ -14,14 +14,15 @@
 .front-drop {
   margin: 20px;
   border-radius: 10px;
+  padding: 10px;
   background-color: var(--white);
+  border: 5px solid var(--blue);
 }
 
+/*----------- NAV BAR SECTION ---------------*/
 .navbar {
   border-radius: 10px;
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
   padding-left: 0;
   margin-top: 0;
   justify-content: end;
@@ -30,7 +31,7 @@
   width: 100%;
   height: 5vh;
   list-style: none;
-  font-size: 1.5em;
+  font-size: 1.1em;
 }
 
 .nav-list {
@@ -39,9 +40,23 @@
   color: var(--blue);
 }
 
+.nav-commander {
+  width: 100%;
+}
+
+/*----------------- ABOUT SECTION -------------*/
+.intro {
+  color: var(--blue);
+  font-size: 2.75em;
+  margin-bottom: 100px;
+  text-align: center;
+  font-weight: bold;
+}
+
 .img-fluid {
-  margin-left: 10px;
   border-radius: 10px;
+  border: 5px solid;
+  border-color: #1773ff;
 }
 
 .about {
@@ -81,23 +96,59 @@
   margin-right: 20px;
 }
 
+/*----------------------PROJECT SECTION--------------------*/
 .project-intro {
   padding-top: 60px;
   padding-left: 20px;
 }
 
+/*      SPECIFICALLY FOR THE CONTENT WITHIN THE CAROUSELS      */
+.description-content {
+  font-size: 1.25em;
+}
+
 .carousel {
   position: relative;
-  height: 600px;
+  height: 700px;
   width: 80%;
   margin: 0 auto;
 }
 
-.carousel__image {
+.carousel__content {
+  position: relative;
   width: 100%;
   height: 100%;
 }
 
+.carousel__image,
+.description-content {
+  position: absolute;
+  width: 100%;
+}
+
+.description-content {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: -40%;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  bottom: 0;
+  left: 0;
+  box-sizing: border-box;
+  color: #fff;
+  margin: 0;
+}
+
+.carousel__image {
+  object-fit: relative;
+  max-width: 100%;
+  height: auto;
+  align-items: content;
+  background-position: center;
+}
+
+/*      SPECIFICALLY THE CAROUSEL TRACK     */
 .carousel__track-container {
   background: #ffffff;
   height: 100%;
@@ -169,6 +220,7 @@
   display: none;
 }
 
+/*------------------CONTACT BLOCK SECTION-----------------*/
 .contact-head {
   margin-top: 90px;
   margin-left: 20px;
@@ -178,14 +230,12 @@
   padding: 20px;
 }
 
-
 .jumbotron {
   padding: 10%;
   border-radius: 10px;
   border: 5px;
   border-color: #1773ff;
 }
-
 
 /*      BUTTON CUSTOMIZATIONS     */
 .btn-primary {
@@ -198,12 +248,10 @@
   color: black;
 }
 
-
 .btn-primary:hover {
   background-color: black;
   color: yellow;
 }
-
 
 .btn-secondary {
   background-color: rgb(110, 103, 103);
@@ -215,11 +263,7 @@
   color: rgb(134, 128, 128);
 }
 
-
 .btn-secondary:hover {
   background-color: orange;
   color: black;
 }
-
-
-

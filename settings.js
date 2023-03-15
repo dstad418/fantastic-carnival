@@ -8,8 +8,9 @@ const dots = Array.from(dotsNav.children);
 const slideWidth = slides[0].getBoundingClientRect().width;
 
 // Arranging slides in an array
+//      Specifically putting enough distance between them, so the images will not overlap!
 const setSlidePosition = (slide, index) => {
-  slide.style.left = slideWidth * index + 'px';
+  slide.style.left = slideWidth * 9 * index + 'px';
 };
 slides.forEach(setSlidePosition);
 
@@ -20,14 +21,13 @@ const moveToSlide = (track, currentSlide, targetSlide) => {
   targetSlide.classList.add('current-slide');
 };
 
+// Updates the navigation/dot indicator!
 const updateDots = (currentDot, targetDot) => {
   currentDot.classList.remove('current-slide');
   targetDot.classList.add('current-slide');
 };
 
-///////
-
-// Hides/shows arrows if at the end of the array
+// Hides/shows arrows if at the end of the array/beginning of the array.
 const hideShowArrows = (slides, prevButton, nextButton, targetIndex) => {
   if (targetIndex === 0) {
     prevButton.classList.add('is-hidden');
@@ -54,7 +54,7 @@ prevButton.addEventListener('click', (e) => {
 });
 
 // Navigating to the next slide ->
-nextButton.addEventListener('click', e => {
+nextButton.addEventListener('click', (e) => {
   // Find current slide
   const currentSlide = track.querySelector('.current-slide');
   const nextSlide = currentSlide.nextElementSibling;
@@ -74,7 +74,7 @@ dotsNav.addEventListener('click', (e) => {
   const currentSlide = track.querySelector('.current-slide');
   const currentDot = dotsNav.querySelector('.current-slide');
   // Loop through array, find first true expr
-  const targetIndex = dots.findIndex(dot => dot === targetDot);
+  const targetIndex = dots.findIndex((dot) => dot === targetDot);
   const targetSlide = slides[targetIndex];
   // Allows us to click on the nav buttons!
   moveToSlide(track, currentSlide, targetSlide);
