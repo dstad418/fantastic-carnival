@@ -14,44 +14,38 @@
   <body class="back-drop">
     <div class="front-drop">
       <!------------------------  NAV BAR  ------------------------>
-      <div class="about-section">
+      <div id="NavBar" class="about-section">
         <nav
           class="navbar"
           style="background-color: rgba(243, 238, 238, 0.851)"
         >
           <ul>
             <li class="nav-list">
-              <a class="nav-link" href="#about" style="color: black">About</a>
+              <a class="nav-link" href="#about">About</a>
             </li>
             <li class="nav-list">
-              <a class="nav-link" href="#experience" style="color: black"
-                >Experience</a
-              >
+              <a class="nav-link" href="#experience">Experience</a>
             </li>
             <li class="nav-list">
-              <a class="nav-link" href="#projects" style="color: black"
-                >Projects</a
-              >
+              <a class="nav-link" href="#projects">Projects</a>
             </li>
             <li class="nav-list">
-              <a class="nav-link" href="#contact" style="color: black"
-                >Contact</a
-              >
+              <a class="nav-link" href="#contact">Contact</a>
             </li>
           </ul>
         </nav>
       </div>
       <!------------------------  ABOUT SECTION ------------------------>
       <div class="row py-5 mt-5">
-        <div id="about" class="col-12 col-md-5">
+        <div id="about" class="col-sm-10 col-md-5">
           <img
             class="img-fluid"
             src="images/Screenshot 2023-03-11 at 1.37.45 PM.png"
-            alt="Ka-chow, what's poppin' fellow weirdos. It's ya boi, Dylan. Back at it again with the imposter syndrome!"
+            alt="That's me! Back at it again with the imposter syndrome!"
           />
         </div>
         <div class="about-me col-12 col-md-7 p-5">
-          <h1>Hello World! I'm Dylan.</h1>
+          <h2>Hello World! I'm Dylan.</h2>
           <h3>(he/him/his)</h3>
           <div class="description-border">
             <p class="description">
@@ -68,7 +62,7 @@
         </div>
       </div>
       <!------------------------  EXPERIENCE SECTION ------------------------>
-      <div id="experience" class="row my-5">
+      <div id="experience" class="experience-outer">
         <h1>Experience</h1>
         <div class="experience-inner">
           <div>
@@ -77,15 +71,15 @@
               <li class="list-group-item">
                 <h3>Portland State University</h3>
                 <p>
-                  Bachelor of Science, Computer Science -
-                  <mark>Magna cum lauda</mark>
+                  (In Progress) Computer Science -
+                  <mark>Magna cum laude</mark>
                 </p>
               </li>
               <li class="list-group-item">
                 <h3>Portland State University</h3>
                 <p>
                   Bachelor of Science, Biochemistry -
-                  <mark>Magna cum lauda</mark>
+                  <mark>Magna cum laude</mark>
                 </p>
               </li>
             </ul>
@@ -106,8 +100,14 @@
         </div>
       </div>
       <!------------------------  PROJECTS CAROUSEL SECTION ------------------------>
-      <div class="carousel">
-        <button class="carousel__button carousel__button--left is-hidden">
+      <div class="project-intro">
+        <h1>Projects</h1>
+      </div>
+      <div id="projects" class="carousel">
+        <button
+          class="carousel__button carousel__button--left is-hidden"
+          title="left-select"
+        >
           <img
             src="images/169-1691085_left-right-arrow-button-png-left-arrow-icon.png"
             alt=""
@@ -119,40 +119,56 @@
               <img
                 class="carousel__image"
                 src="images/computer_server_based.png"
-                alt=""
+                alt="x86 Program"
               />
             </li>
             <li class="carousel__slide">
               <img
                 class="carousel__image"
                 src="images/space_ijuu_mars.png"
-                alt=""
+                alt="Mars Rover Program"
               />
             </li>
             <li class="carousel__slide">
               <img
                 class="carousel__image"
                 src="images/sweets_chocolate_cake_sachertorte.png"
-                alt=""
+                alt="ChocAn Agile Program"
               />
             </li>
           </ul>
         </div>
-        <button class="carousel__button carousel__button--right">
+        <button
+          class="carousel__button carousel__button--right"
+          title="right-select"
+        >
           <img
             src="images/169-1691085_right-right-arrow-button-png.jpeg"
             alt=""
           />
         </button>
         <div class="carousel__nav">
-          <button class="carousel__indicator current-slide"></button>
-          <button class="carousel__indicator"></button>
-          <button class="carousel__indicator"></button>
+          <button
+            class="carousel__indicator current-slide"
+            title="bottom-location-indicator1"
+          ></button>
+          <button
+            class="carousel__indicator"
+            title="bottom-location-indicator2"
+          ></button>
+          <button
+            class="carousel__indicator"
+            title="bottom-location-indicator3"
+          ></button>
         </div>
       </div>
       <!------------------------  CONTACT SECTION ------------------------>
-      <h1>Contact</h1>
-      <div id="contact" style="padding-top: 5%; padding-bottom: 5%">
+      <h1 class="contact-head">Contact Me</h1>
+      <div
+        class="contact-block"
+        id="contact"
+        style="padding-top: 5%; padding-bottom: 5%"
+      >
         <form
           class="jumbotron bg-light text-dark"
           style="padding: 10px; margin: auto"
@@ -214,7 +230,7 @@
                   name="gridRadios"
                   id="gridRadios1"
                   value="option1"
-                  checked
+                  title="Mild-excitement"
                 />
                 <label class="form-check-label" for="gridRadios1">
                   Okay, sure.
@@ -238,11 +254,10 @@
                     class="form-check-input"
                     type="radio"
                     name="gridRadios"
-                    id="gridRadios1"
+                    id="gridRadios3"
                     value="option1"
-                    checked
                   />
-                  <label class="form-check-label" for="gridRadios1">
+                  <label class="form-check-label" for="gridRadios3">
                     Absolutely!!!
                   </label>
                 </div>
@@ -278,13 +293,14 @@
         </form>
       </div>
     </div>
+    <script src="settings.js"></script>
   </body>
   <!------------------------  FOOTER SECTION ------------------------>
   <footer
     class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top"
   >
-    <div class="col-md-4 d-flex align-items-center"></div>
-    <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+    <div class="d-flex align-items-center"></div>
+    <ul class="nav justify-content-center list-unstyled d-flex">
       <li class="ms-3">
         <a class="text-muted" href="https://github.com/dstad418">
           <svg
@@ -294,7 +310,7 @@
             fill="currentColor"
             class="bi bi-github"
             viewBox="0 0 16 16"
-            alt="GitHub logo"
+            alt="Ya-ha-ha! You found me!"
           >
             <path
               d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"
@@ -304,5 +320,4 @@
       </li>
     </ul>
   </footer>
-  <script src="settings.js"></script>
 </html>

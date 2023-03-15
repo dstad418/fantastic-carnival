@@ -5,7 +5,7 @@ const nextButton = document.querySelector('.carousel__button--right');
 const prevButton = document.querySelector('.carousel__button--left');
 const dotsNav = document.querySelector('.carousel__nav');
 const dots = Array.from(dotsNav.children);
-const slideSize = slides[0].getBoundingClientRect().width;
+const slideWidth = slides[0].getBoundingClientRect().width;
 
 // Arranging slides in an array
 const setSlidePosition = (slide, index) => {
@@ -15,8 +15,8 @@ slides.forEach(setSlidePosition);
 
 // Reuse close
 const moveToSlide = (track, currentSlide, targetSlide) => {
-  track.style.transform = 'translateX(' + targetSlide.style.left + ')';
-  currentSlide.classList.remove('.current-slide');
+  track.style.transform = 'translateX(-' + targetSlide.style.left + ')';
+  currentSlide.classList.remove('current-slide');
   targetSlide.classList.add('current-slide');
 };
 
@@ -25,6 +25,9 @@ const updateDots = (currentDot, targetDot) => {
   targetDot.classList.add('current-slide');
 };
 
+///////
+
+// Hides/shows arrows if at the end of the array
 const hideShowArrows = (slides, prevButton, nextButton, targetIndex) => {
   if (targetIndex === 0) {
     prevButton.classList.add('is-hidden');
@@ -40,10 +43,10 @@ const hideShowArrows = (slides, prevButton, nextButton, targetIndex) => {
 
 // Adding functionality for previous slide button
 prevButton.addEventListener('click', (e) => {
-  const currentSlide = track.document.querySelector('.current-slide');
+  const currentSlide = track.querySelector('.current-slide');
   const prevSlide = currentSlide.previousElementSibling;
   const currentDot = dotsNav.querySelector('.current-slide');
-  const prevDot = previousDot.nextElementSibling;
+  const prevDot = currentDot.previousElementSibling;
   const prevIndex = slides.findIndex((slide) => slide === prevSlide);
   moveToSlide(track, currentSlide, prevSlide);
   updateDots(currentDot, prevDot);
@@ -51,9 +54,9 @@ prevButton.addEventListener('click', (e) => {
 });
 
 // Navigating to the next slide ->
-nextButton.addEventListener('click', (e) => {
+nextButton.addEventListener('click', e => {
   // Find current slide
-  const currentSlide = track.document.querySelector('.current-slide');
+  const currentSlide = track.querySelector('.current-slide');
   const nextSlide = currentSlide.nextElementSibling;
   const currentDot = dotsNav.querySelector('.current-slide');
   const nextDot = currentDot.nextElementSibling;
@@ -67,14 +70,11 @@ nextButton.addEventListener('click', (e) => {
 // Moving the event listener dots!
 dotsNav.addEventListener('click', (e) => {
   const targetDot = e.target.closest('button');
-
-  if (!targetDot) {
-    return;
-  }
+  if (!targetDot) return;
   const currentSlide = track.querySelector('.current-slide');
   const currentDot = dotsNav.querySelector('.current-slide');
   // Loop through array, find first true expr
-  const targetIndex = dots.findIndex((dot) => dot === targetDot);
+  const targetIndex = dots.findIndex(dot => dot === targetDot);
   const targetSlide = slides[targetIndex];
   // Allows us to click on the nav buttons!
   moveToSlide(track, currentSlide, targetSlide);

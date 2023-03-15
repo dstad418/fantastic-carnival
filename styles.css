@@ -13,24 +13,59 @@
 
 .front-drop {
   margin: 20px;
+  border-radius: 10px;
   background-color: var(--white);
 }
 
 .navbar {
-  position: sticky;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding-left: 0;
+  margin-top: 0;
+  justify-content: end;
+  margin-bottom: 0;
+  margin-right: 20px;
+  width: 100%;
+  height: 5vh;
+  list-style: none;
+  font-size: 1.5em;
+}
+
+.nav-list {
+  display: inline;
+  float: right;
+  color: var(--blue);
+}
+
+.img-fluid {
+  margin-left: 10px;
+  border-radius: 10px;
 }
 
 .about {
   margin: 20px;
 }
 
-.decription-border {
-  background-color: #e7e0e0;
+.about-me {
+  margin-top: -40px;
+}
+
+.description-border {
+  background-color: #f2e9e9;
+  border-radius: 10px;
 }
 
 .description {
-  background-color: var(--light-grey);
-  font-size: 1.15rem;
+  background-color: rgb(237, 236, 236);
+  font-size: 1.25rem;
+  border-radius: 10px;
+  margin: 10px;
+}
+
+.experience-outer {
+  padding-left: 20px;
 }
 
 .experience-inner {
@@ -46,6 +81,11 @@
   margin-right: 20px;
 }
 
+.project-intro {
+  padding-top: 60px;
+  padding-left: 20px;
+}
+
 .carousel {
   position: relative;
   height: 600px;
@@ -59,7 +99,7 @@
 }
 
 .carousel__track-container {
-  background: #1773ff;
+  background: #ffffff;
   height: 100%;
   position: relative;
   overflow: hidden;
@@ -89,12 +129,16 @@
   cursor: pointer;
 }
 
+.carousel__button img {
+  width: 20px;
+}
+
 .carousel__button--left {
-  left: -40px;
+  left: -55px;
 }
 
 .carousel__button--right {
-  right: -40px;
+  right: -55px;
 }
 
 .carousel__button img {
@@ -102,7 +146,6 @@
 }
 
 .carousel__nav {
-  background: black;
   display: flex;
   justify-content: center;
   padding: 10px 0;
@@ -113,8 +156,8 @@
   border-radius: 50%;
   width: 20px;
   height: 20px;
-  background: rgb(181, 178, 178);
-  margin: 0 10px;
+  background: rgb(116, 107, 107);
+  margin: 0 15px;
   cursor: pointer;
 }
 
@@ -126,16 +169,57 @@
   display: none;
 }
 
-/*        DIFFERENT VIEWS        */
-
-/* MOBILE VIEW */
-@media (max-width: 480px) {
+.contact-head {
+  margin-top: 90px;
+  margin-left: 20px;
 }
 
-/* TABLET VIEW */
-@media (min-width: 480.1px) and (max-width: 768px) {
+.contact-block {
+  padding: 20px;
 }
 
-/* DESKTOP VIEW */
-@media (min-width: 768.1px) {
+
+.jumbotron {
+  padding: 10%;
+  border-radius: 10px;
+  border: 5px;
+  border-color: #1773ff;
 }
+
+
+/*      BUTTON CUSTOMIZATIONS     */
+.btn-primary {
+  background-color: lightblue;
+  color: black;
+}
+
+.btn-primary:active {
+  background-color: orange;
+  color: black;
+}
+
+
+.btn-primary:hover {
+  background-color: black;
+  color: yellow;
+}
+
+
+.btn-secondary {
+  background-color: rgb(110, 103, 103);
+  color: white;
+}
+
+.btn-secondary:active {
+  background-color: #1773ff;
+  color: rgb(134, 128, 128);
+}
+
+
+.btn-secondary:hover {
+  background-color: orange;
+  color: black;
+}
+
+
+
