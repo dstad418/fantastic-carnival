@@ -13,6 +13,7 @@
 
 .front-drop {
   margin: 20px;
+  margin-top: -40px;
   border-radius: 10px;
   padding: 10px;
   background-color: var(--white);
@@ -23,20 +24,22 @@
 .navbar {
   border-radius: 10px;
   display: flex;
-  padding-left: 0;
-  margin-top: 0;
   justify-content: end;
+  position: fixed;
+  margin-left: -40px;
+  margin-top: 20px;
   margin-bottom: 0;
   margin-right: 20px;
-  width: 100%;
+  width: 120%;
   height: 5vh;
   list-style: none;
   font-size: 1.1em;
+  z-index: 999;
 }
 
 .nav-list {
   display: inline;
-  float: right;
+  float: left;
   color: var(--blue);
 }
 
@@ -51,6 +54,7 @@
   margin-bottom: 100px;
   text-align: center;
   font-weight: bold;
+  padding-top: 30px;
 }
 
 .img-fluid {
@@ -79,6 +83,11 @@
   margin: 10px;
 }
 
+.experience-gap {
+  padding-top: 20px;
+  padding-bottom: 40px;
+}
+
 .experience-outer {
   padding-left: 20px;
 }
@@ -97,6 +106,12 @@
 }
 
 /*----------------------PROJECT SECTION--------------------*/
+
+.projects-gap {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
 .project-intro {
   padding-top: 60px;
   padding-left: 20px;
@@ -228,6 +243,8 @@
 
 .contact-block {
   padding: 20px;
+  padding-left: 10%;
+  padding-right: 10%;
 }
 
 .jumbotron {
